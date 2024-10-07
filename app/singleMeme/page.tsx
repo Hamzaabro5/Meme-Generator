@@ -15,7 +15,7 @@ const SingleMeme = ({searchParams}: {searchParams: {id: string; url: string}}) =
         console.log(text1.current?.value);
         console.log(text2.current?.value);
        
-        const data = await fetch(`https://api.imgflip.com/caption_image?template_id=${searchParams.id}&username=mabdullah6600&password=asdfgfdsa123&text0=${text1.current?.value}&text1=${text2.current?.value}` , {
+        const data = await fetch(`https://api.imgflip.com/caption_image?template_id=${searchParams.id}&username=hamzaabroduit&password=hamzaabro&text0=${text1.current?.value}&text1=${text2.current?.value}` , {
             method: 'POST'
         })
         const response = await data.json()
