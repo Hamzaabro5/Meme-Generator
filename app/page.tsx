@@ -23,7 +23,7 @@ const Page = async () => {
 
         {res.data.memes.map((item: types) => {
           return <div  className='p-10'>
-            <div className='border-4 border-green-800 p-5 flex justify-center flex-wrap items-center gap-5'>
+            <div className='border-4 border-green-800 p-8 flex justify-center flex-wrap items-center gap-5 rounded-2xl w-auto'>
             <Image src={item.url} width={300} height={300} alt='meme' />
             <Link href={{pathname: "singleMeme",
               query: {
