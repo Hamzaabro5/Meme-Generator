@@ -14,7 +14,7 @@ interface types {
 const Page = async () => {
   const data = await axios('https://api.imgflip.com/get_memes')
   const res = data.data
-  // console.log(res.data.memes);
+  console.log(res.data.memes);
   
 
   return (
@@ -23,19 +23,25 @@ const Page = async () => {
 
         {res.data.memes.map((item: types) => {
           return <div  className='p-10'>
+              <h1 className='text-center text-2xl font-bold'>{item.name}</h1>
+
             <div className='border-4 border-green-800 p-8 flex justify-center flex-wrap items-center gap-5 rounded-2xl w-auto'>
             <Image src={item.url} width={300} height={300} alt='meme' />
+
             <Link href={{pathname: "singleMeme",
               query: {
                 url: item.url,
                 id: item.id
-              }}}><button className='btn btn-outline mt-5'>Generate Meme</button></Link>
+              }
+              }}>
+              <button className='btn btn-outline mt-5'>Generate Meme</button>
+            </Link>
+
             </div>
           </div>
         })}
 
       </div>
-
     </>
   )
 }
